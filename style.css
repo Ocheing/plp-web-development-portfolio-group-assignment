@@ -1,0 +1,97 @@
+/* style.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Navbar Customizations */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)),
+        url('https://images.unsplash.com/photo-1581093588401-1d54dc1d0ff1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    padding: 80px 0;
+}
+
+.hero h1,
+.hero h2 {
+    color: white;
+}
+
+.hero .btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+/* About Section */
+.about {
+    background-color: #fff;
+}
+
+.about h2 {
+    font-weight: 700;
+}
+
+.about p {
+    font-size: 16px;
+    color: #555;
+}
+
+.about .btn {
+    border-radius: 50px;
+    padding: 10px 25px;
+}
+
+/* Services Section */
+.services .card {
+    transition: transform 0.3s ease;
+}
+
+.services .card:hover {
+    transform: translateY(-10px);
+}
+
+/* Skills Section */
+h2 {
+    font-weight: bold;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 20px;
+    background-color: #e0e0e0;
+}
+
+.progress-bar {
+    border-radius: 20px;
+    font-size: 12px;
+    padding-right: 5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    background: #f8f9fa;
+}
+
+h6 {
+    margin-bottom: 5px;
+}
+
+img:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
