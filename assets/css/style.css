@@ -3,10 +3,10 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
+    max-width: 100%;
+    overflow-x: clip; /* Prevent horizontal scroll */
+  }
+    
 
 /* Navbar Customizations */
 .navbar {
@@ -148,77 +148,12 @@ a.transparent-btn {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
-  .img-fluid rounded-circle {
-    position: relative;
-    height: 500px;
-    width: 400px;
-  }
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
 
-  .banner-info-grid {
-    max-width: 750px;
-    margin: auto;
-  }
   
-  .banner-info-grid h1,
-  .banner-info-grid h5 {
-    color: #fff;
-  }
-  
-  .w3l-banner p {
-    color: #fff;
-  }
-  
-  ul.follow-social li {
-    display: inline-block;
-    margin-right: 15px;
-  }
-  
-  ul.follow-social li a {
-    font-size: 20px;
-  }
-  
-  @media (max-width: 1080px) {
-    .w3l-banner h3 {
-      font-size: 80px;
-      line-height: 80px;
-    }
-  }
-  
-  @media (max-width: 991px) {
-    .my-image {
-      height: 450px;
-      overflow: hidden;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .w3l-banner h3 {
-      font-size: 65px;
-      line-height: 65px;
-    }
-  }
-  
-  @media (max-width: 736px) {}
-  
-  @media (max-width: 568px) {
-    .w3l-banner h3 {
-      font-size: 45px;
-      line-height: 45px;
-    }
-    .my-image {
-      height: 350px;
-    }
-  }
-  
-  @media (max-width: 415px) {
-    .w3l-banner h3 {
-      font-size: 42px;
-      line-height: 40px;
-    }
-    .my-image {
-      height: 300px;
-    }
-  }
 /* About Section */
 .about {
     background-color: #fff;
@@ -282,4 +217,51 @@ img:hover {
     transition: 0.3s ease;
 }
 
+/* Logos Section */
+/* Add continuous smooth motion to move logos to the left */
+@keyframes moveLeftSmooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logos-row {
+  animation: moveLeftSmooth 10s linear infinite;
+}
+
+
+
+/* Footer Social Icons Spacing */
+.bg-secondary .container {
+  max-width: 1200px; /* Or your preferred max width */
+  padding: 0 20px; /* Add some side padding */
+}
+
+/* Remove default negative margins from Bootstrap rows to prevent small horizontal scrolling */
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.social-icons {
+  margin-left: 0; /* Remove the previous large margin */
+  gap: 15px; /* Space between icons */
+  display: flex;
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+  .bg-secondary .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .social-icons {
+      margin-left: 200px; /* Your desired 200px gap */
+  }
+}
 
