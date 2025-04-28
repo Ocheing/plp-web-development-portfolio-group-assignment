@@ -7,12 +7,21 @@
 }
 
 body {
+<<<<<<< HEAD
   font-family: 'Poppins', sans-serif;
   background-color: #f8f9fa;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
+=======
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    max-width: 100%;
+    overflow-x: clip; /* Prevent horizontal scroll */
+  }
+    
+>>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
 
 /* Navbar Customizations */
 .navbar {
@@ -197,6 +206,7 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
 /* Buttons Section (Hire Me + Download CV) */
 .d-flex.gap-3 {
   display: flex;
@@ -460,6 +470,14 @@ ul.follow-social li a {
 
 
 
+=======
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+  
+>>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
 /* About Section */
 .about {
   background-color: #fff;
@@ -523,11 +541,60 @@ img:hover {
   transition: 0.3s ease;
 }
 
+<<<<<<< HEAD
 /* Feature Section Styles */
 .profile-image {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+=======
+/* Logos Section */
+/* Add continuous smooth motion to move logos to the left */
+@keyframes moveLeftSmooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logos-row {
+  animation: moveLeftSmooth 10s linear infinite;
+}
+
+
+
+/* Footer Social Icons Spacing */
+.bg-secondary .container {
+  max-width: 1200px; /* Or your preferred max width */
+  padding: 0 20px; /* Add some side padding */
+}
+
+/* Remove default negative margins from Bootstrap rows to prevent small horizontal scrolling */
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.social-icons {
+  margin-left: 0; /* Remove the previous large margin */
+  gap: 15px; /* Space between icons */
+  display: flex;
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+  .bg-secondary .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .social-icons {
+      margin-left: 200px; /* Your desired 200px gap */
+  }
+>>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
 }
 
 .service-icon {
