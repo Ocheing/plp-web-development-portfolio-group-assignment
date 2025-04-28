@@ -8,10 +8,12 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
-<!-- linking custom fonts -->
+    <!-- linking custom fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
@@ -21,6 +23,9 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
+            <div class="nav-logo">
+                <img src="assets/images/landingpage logo.png" alt="Logo">
+            </div>
             <a class="navbar-brand" href="#">UI Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -35,63 +40,62 @@
                     <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                     <li class="nav-item">
-                    <a href="#" class="btn btn-success btn-hire-me ms-lg-3">Hire Me</a>
+                        <a href="#" class="btn btn-success btn-hire-me ms-lg-3">Hire Me</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-   <!-- Hero Section -->
-<section class="hero d-flex align-items-center" style="background: linear-gradient(rgba(24, 48, 54, 0.85), rgba(24, 48, 54, 0.85)), url('/assets/images/banner1.jpg') no-repeat center center; background-size: cover; height: 100vh;">
-    <div class="container">
-        <div class="row align-items-center">
-            
-            <!-- Left Text -->
-            <div class="col-lg-7 ps-3">
-                <h3 class="mb-3 text-start text-white fw-semibold lh-sm fs-3 font-dm-sans">Hi, I'm John Watson</h3>
-                <h2 class="text-white mb-3">Web De<span class="text-primary">veloper</span></h2>
-                <p class="lead text-start text-white">
-                    I love Graphic design and Photography and have been working on my portfolio since 2016. I can
-                    give your business a new Creative start right away!
-                </p>
-                <div class="d-flex gap-3">
-                    <a href="/contact.html" class="btn btn-lg btn-hire-me">Hire Me</a>
-                    <a href="#portfolio" class="btn btn-lg transparent-btn">My Portfolio</a>
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center"
+        style="background: linear-gradient(rgba(24, 48, 54, 0.85), rgba(24, 48, 54, 0.85)), url('/assets/images/banner1.jpg') no-repeat center center; background-size: cover; height: 100vh;">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Left Text -->
+                <div class="col-lg-7 ps-3">
+                    <h3 class="mb-3 text-start text-white fw-semibold lh-sm fs-3 font-dm-sans">Hi, I'm John Watson</h3>
+                    <h2 class="text-white mb-3">Web De<span class="text-primary">veloper</span></h2>
+                    <p class="lead text-start text-white">
+                        I love Graphic design and Photography and have been working on my portfolio since 2016. I can
+                        give your business a new Creative start right away!
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="/contact.html" class="btn btn-lg btn-hire-me">Hire Me</a>
+                        <a href="#portfolio" class="btn btn-lg transparent-btn">My Portfolio</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Right Image -->
-            <div class="col-lg-5 text-end position-relative">
-                <img src="assets/images/profile image.png" 
-                     class="img-fluid profile-image" 
-                     alt="Profile Image" 
-                     width="500" 
-                     height="800">
+                <!-- Right Image -->
+                <div class="col-lg-5 text-end position-relative">
+                    <img src="assets/images/profile image.png" class="img-fluid profile-image" alt="Profile Image">
+                </div>
 
-                      <!-- Navigation Icons Container  -->
-                     <div class="position-absolute d-flex flex-column gap-2" style="right: 0; top: 40px;">
-                         <!-- Back Icon -->
-                         <button class="btn btn-light rounded-0 shadow-sm px-3 py-2 border-0">
-                             <i class="bi bi-arrow-left"></i>
-                         </button>
-                         
-                         <!-- Create Icon -->
-                         <button class="btn btn-light rounded-0 shadow-sm px-3 py-2 border-0">
-                             <i class="bi bi-plus-lg"></i>
-                         </button>
-                         
-                         <!-- Buy Icon -->
-                         <button class="btn btn-light rounded-0 shadow-sm px-3 py-2 border-0">
-                             <i class="bi bi-cart"></i>
-                         </button>
-                         
-                         <!-- Fast Back Icon -->
-                         <button class="btn btn-light rounded-0 shadow-sm px-3 py-2 border-0">
-                             <i class="bi bi-chevron-double-left"></i>
-                         </button>
-                     </div>
-                 </div>
-</section>
+
+                <!-- Navigation Icons Container  -->
+                <div class="position-absolute d-flex flex-column gap-2 icon-buttons">
+                    <!-- Back Icon -->
+                    <button class="btn btn-light rounded-0 shadow-sm px-3 py-2 border-0">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+
+                    <!-- Create Icon -->
+                    <button class="btn btn-light rounded-0 shadow-sm px-3 py-2 border-0">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+
+                    <!-- Buy Icon -->
+                    <button class="btn btn-light rounded-0 shadow-sm px-3 py-2 border-0">
+                        <i class="bi bi-cart"></i>
+                    </button>
+
+                    <!-- Fast Back Icon -->
+                    <button class="btn btn-light rounded-0 shadow-sm px-3 py-2 border-0">
+                        <i class="bi bi-chevron-double-left"></i>
+                    </button>
+                </div>
+
+    </section>
 
     <!-- About Section -->
     <section class="about py-5">
@@ -100,7 +104,8 @@
 
                 <!-- Left Image -->
                 <div class="col-lg-5 text-center">
-                    <img src="https://via.placeholder.com/400x500" alt="Profile" class="img-fluid rounded-3 shadow">
+                    <img src="assets/images/about_portfolio image .png" alt="Profile"
+                        class="img-fluid rounded-3 shadow">
                 </div>
 
                 <!-- Right Content -->
@@ -200,7 +205,8 @@
             <div class="row align-items-center">
                 <!-- Image Section -->
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="your-image.jpg" alt="Skills Image" class="img-fluid rounded shadow">
+                    <img src="assets/images/skills portfolio image.png" alt="Skills Image"
+                        class="img-fluid rounded shadow">
                 </div>
 
                 <!-- Skills Section -->
@@ -244,68 +250,95 @@
         </div>
     </section>
 
-
-    <!-- feature Section -->
+    <!-- Feature Section -->
     <section class="py-5" style="background-color: #f8f9fa;">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">My Services</h2>
-            </div>
+            <div class="row align-items-center">
 
-            <div class="row g-4">
+                <!-- Left Services -->
+                <div class="col-lg-7">
+                    <div class="row g-4">
 
-                <!-- Single Service -->
-                <div class="col-6 col-md-4">
-                    <div class="text-center p-3 bg-white shadow-sm rounded h-100">
-                        <i class="fas fa-code service-icon mb-3"></i>
-                        <h6 class="fw-bold">Web Development</h6>
-                        <p class="small text-muted">Building modern and responsive websites with clean code.</p>
+                        <!-- Single Service -->
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-code fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Web Development</h6>
+                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
+                                        ligula at.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-paint-brush fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Design Trends</h6>
+                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
+                                        ligula at.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-chart-line fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Research & Analysis</h6>
+                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
+                                        ligula at.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-headset fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Customer Support</h6>
+                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
+                                        ligula at.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-mobile-alt fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Responsive Design</h6>
+                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
+                                        ligula at.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-pen-nib fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">PSD Design</h6>
+                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
+                                        ligula at.</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4">
-                    <div class="text-center p-3 bg-white shadow-sm rounded h-100">
-                        <i class="fas fa-lightbulb service-icon mb-3"></i>
-                        <h6 class="fw-bold">Creative Design</h6>
-                        <p class="small text-muted">Crafting visually appealing designs with latest trends.</p>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="text-center p-3 bg-white shadow-sm rounded h-100">
-                        <i class="fas fa-chart-line service-icon mb-3"></i>
-                        <h6 class="fw-bold">SEO Optimization</h6>
-                        <p class="small text-muted">Helping websites rank higher on search engines effectively.</p>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="text-center p-3 bg-white shadow-sm rounded h-100">
-                        <i class="fas fa-headset service-icon mb-3"></i>
-                        <h6 class="fw-bold">24/7 Support</h6>
-                        <p class="small text-muted">Available round-the-clock to assist with any queries.</p>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="text-center p-3 bg-white shadow-sm rounded h-100">
-                        <i class="fas fa-mobile-alt service-icon mb-3"></i>
-                        <h6 class="fw-bold">Responsive Design</h6>
-                        <p class="small text-muted">Websites that work perfectly on all devices and screens.</p>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="text-center p-3 bg-white shadow-sm rounded h-100">
-                        <i class="fas fa-pen-nib service-icon mb-3"></i>
-                        <h6 class="fw-bold">Graphic Design</h6>
-                        <p class="small text-muted">Creating brand logos, posters, and marketing materials.</p>
-                    </div>
+                <!-- Right Image -->
+                <div class="col-lg-5 text-center">
+                    <img src="assets/images/profile image.png" class="img-fluid" alt="Profile Image"
+                        style="max-height: 450px; object-fit: contain;">
                 </div>
 
             </div>
         </div>
     </section>
+
 
     <!-- Counters Section -->
     <section class="py-5" style="background-color: #2d6a4f;">
@@ -408,7 +441,38 @@
 
         </div>
     </section>
-<script src="assets/js/script.js"></script>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="assets/images/portfolio_logo_img.png" alt="Logo">
+            </div>
+            <div class="footer-title">UI Portfolio</div>
+
+            <div class="footer-contact">
+                <p><i class="fas fa-phone-alt"></i> +12 345 678 900</p>
+                <p><i class="fas fa-envelope"></i> info@example.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 208 Avenue Street, UK - 62617</p>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#"><i class="fab fa-vk"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 UI Portfolio. All Rights Reserved</p>
+        </div>
+
+    </footer>
+
+
 </body>
 
 </html>
