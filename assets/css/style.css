@@ -1,5 +1,4 @@
-/* General Styles */
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,164 +6,172 @@
 }
 
 body {
-<<<<<<< HEAD
   font-family: 'Poppins', sans-serif;
   background-color: #f8f9fa;
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
 }
-=======
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    max-width: 100%;
-    overflow-x: clip; /* Prevent horizontal scroll */
-  }
-    
->>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
 
-/* Navbar Customizations */
-.navbar {
-  background-color: transparent !important;
-  padding: 15px 20px;
-  border: none;
+/* Theme Colors */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --muted-text-color: #6c757d;
+}
+
+/* Navbar Base */
+.navbar-wrapper {
+  background-color: transparent;
+  color: white;
+  padding: 1rem 1.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* Toggle Icons */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-icon {
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00c896;
+}
+
+/* Search Overlay */
+.navbar-search-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
-  transition: background-color 0.3s ease;
+  height: 60px;
+  background-color: #021f24;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
 }
 
-.navbar-brand {
-  color: white !important;
-  font-size: 1.5rem;
-  font-weight: 600;
+#search-toggle:checked~.navbar-search-container {
+  transform: translateY(0);
 }
 
-.navbar-toggler {
+.navbar-search-input {
+  flex: 1;
+  background: transparent;
   border: none;
+  border-bottom: 2px solid #00c896;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  outline: none;
 }
 
-.navbar-toggler-icon {
-  background-color: white;
+.close-search {
+  font-size: 1.5rem;
+  color: white;
+  margin-right: 1rem;
+  cursor: pointer;
 }
 
-.navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-}
-
-.navbar-nav .nav-link {
-  color: white !important;
-  font-size: 1.1rem;
-  margin-left: 20px;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #007e68;
-}
-
-.navbar-toggler {
-  display: none;
-}
-
+/* Responsive Collapse Menu (CSS-only) */
 @media (max-width: 991px) {
-  .navbar-toggler {
+  .hamburger {
     display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  #nav-toggle:checked~nav .nav-links {
+    max-height: 500px;
+    padding: 1rem 0;
   }
 
   .navbar-nav {
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    gap: 1rem;
   }
 
-  .navbar-nav .nav-link {
-    font-size: 1.2rem;
-    margin-left: 0;
-    margin-bottom: 15px;
-  }
-
-  .navbar-nav .nav-link:last-child {
-    margin-bottom: 0;
-  }
-
-  .navbar-brand {
-    font-size: 1.3rem;
+  .btn {
+    margin-top: 0.5rem;
   }
 }
 
-@media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-  }
+/* Theme Toggle */
+.theme-icon {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 1.5rem;
 }
 
-/* Responsive Adjustments for navbar background */
-@media (max-width: 1080px) {
-  .navbar {
-    padding: 12px 20px;
-  }
-
-  .navbar-brand {
-    font-size: 1.4rem;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 1.1rem;
-  }
+.theme-icon .sun,
+.theme-icon .moon {
+  display: none;
 }
 
-/* Padding Utilities */
-.ps-20px {
-  padding-left: 20px;
+#theme-toggle:not(:checked)~.theme-icon .moon {
+  display: inline;
 }
 
-/* Hero Background Layer */
-.hero::before {
-  content: "";
-  background: var(--bg-layer);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
+#theme-toggle:checked~.theme-icon .sun {
+  display: inline;
 }
 
-/* Typewriting Effect */
-.typed-text {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  font-weight: bold;
-  color: transparent;
-  text-align: left;
+#theme-toggle:checked~* {
+  background-color: #021f24 !important;
+  color: #f1f1f1 !important;
 }
 
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background-color: #007bff;
-  animation: blink 0.7s steps(2, start) infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-/* Padding for Paragraphs and Headings */
-p,
-h3 {
-  padding-left: -20px;
-}
 
 /* Hero Section - Hire Me Button */
 .btn-hire-me {
@@ -206,7 +213,6 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-<<<<<<< HEAD
 /* Buttons Section (Hire Me + Download CV) */
 .d-flex.gap-3 {
   display: flex;
@@ -310,6 +316,75 @@ ul.follow-social li a {
   transform: translateX(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.animated-words {
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+}
+
+.animated-words .word {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color, white);
+  text-shadow: 0 0 8px #00c896, 0 0 16px #00c896, 0 0 24px #00c896;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideWords 15s infinite;
+}
+
+.animated-words .word:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animated-words .word:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.animated-words .word:nth-child(3) {
+  animation-delay: 6s;
+}
+
+.animated-words .word:nth-child(4) {
+  animation-delay: 9s;
+}
+
+.animated-words .word:nth-child(5) {
+  animation-delay: 12s;
+}
+
+@keyframes slideWords {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 1080px) {
@@ -465,19 +540,33 @@ ul.follow-social li a {
   }
 }
 
-
-
-
-
-
-=======
-.img-fluid {
-  max-width: 100%;
-  height: auto;
+/* Base spacing for hero section */
+.hero {
+  padding-top: 80px;
+  /* Default padding for larger screens */
 }
 
-  
->>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
+/* For smaller devices (under 768px) */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+    /* Adjust padding for smaller screens */
+  }
+}
+
+/* For even smaller screens (under 576px) */
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 140px;
+    /* More padding for very small screens */
+  }
+}
+
+
+
+
+
+
 /* About Section */
 .about {
   background-color: #fff;
@@ -487,10 +576,16 @@ ul.follow-social li a {
   font-weight: 700;
 }
 
+
 .about p {
   font-size: 16px;
-  color: #555;
+  color: var(--muted-text-color);
 }
+
+
+
+
+
 
 .about .btn {
   border-radius: 50px;
@@ -541,60 +636,11 @@ img:hover {
   transition: 0.3s ease;
 }
 
-<<<<<<< HEAD
 /* Feature Section Styles */
 .profile-image {
   max-width: 100%;
   height: auto;
   object-fit: cover;
-=======
-/* Logos Section */
-/* Add continuous smooth motion to move logos to the left */
-@keyframes moveLeftSmooth {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.logos-row {
-  animation: moveLeftSmooth 10s linear infinite;
-}
-
-
-
-/* Footer Social Icons Spacing */
-.bg-secondary .container {
-  max-width: 1200px; /* Or your preferred max width */
-  padding: 0 20px; /* Add some side padding */
-}
-
-/* Remove default negative margins from Bootstrap rows to prevent small horizontal scrolling */
-.row {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.social-icons {
-  margin-left: 0; /* Remove the previous large margin */
-  gap: 15px; /* Space between icons */
-  display: flex;
-}
-
-/* For larger screens */
-@media (min-width: 768px) {
-  .bg-secondary .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-  
-  .social-icons {
-      margin-left: 200px; /* Your desired 200px gap */
-  }
->>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
 }
 
 .service-icon {
@@ -648,6 +694,103 @@ img:hover {
 
   .feature-section .service-item {
     justify-content: center;
+  }
+}
+
+/*logo section*/
+.logo-slider {
+  overflow: hidden;
+  background-color: #2d6a4f;
+  padding: 20px 0;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(250px * 10);
+  /* Width = logo width * total logos */
+  animation: scrollLogos 25s linear infinite;
+}
+
+.logo-img {
+  width: 250px;
+  max-height: 80px;
+  margin: 0 30px;
+  object-fit: contain;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/*hire me section*/
+.hire-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #007e68, #00c896);
+}
+
+.hire-container {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hire-container h2 {
+  margin-bottom: 20px;
+  color: #007e68;
+  font-weight: bold;
+}
+
+.hire-container p {
+  margin-bottom: 30px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #007e68;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #00c896;
+}
+
+@media (max-width: 600px) {
+  .hire-container {
+    padding: 25px;
   }
 }
 

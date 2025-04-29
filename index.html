@@ -2,77 +2,94 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI Portfolio Landing Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive UI Portfolio</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom CSS -->
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <!-- linking custom fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-=======
-    <link rel="stylesheet" href="assets/css/style.css">
->>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
+    <!-- Theme Toggle -->
+    <input type="checkbox" id="theme-toggle" hidden />
+    <label for="theme-toggle" class="theme-icon" aria-label="Toggle theme">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+    </label>
+
+    <!-- Navbar Toggle -->
+    <input type="checkbox" id="nav-toggle" hidden />
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-<<<<<<< HEAD
-            <div class="nav-logo">
-                <img src="assets/images/landingpage logo.png" alt="Logo">
+    <nav class="navbar-wrapper">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <img src="assets/images/landingpage logo.png" alt="Logo" class="nav-logo" />
+                <a href="#" class="navbar-brand">UI Portfolio</a>
             </div>
-            <a class="navbar-brand" href="#">UI Portfolio</a>
-=======
-            <a class="navbar-brand" href="#"><i class="fab fa-asymmetrik"></i>UI Portfolio</a>
->>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto gap-2">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item">
-                        <a href="#" class="btn btn-success btn-hire-me ms-lg-3">Hire Me</a>
-                    </li>
+            <!-- Hamburger Icon -->
+            <label for="nav-toggle" class="hamburger">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <!-- Nav Links -->
+            <div class="nav-links">
+                <ul class="navbar-nav d-flex flex-column flex-lg-row align-items-lg-center gap-3">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#pages" class="nav-link">Pages</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="assets/contact_me.html" class="btn btn-success">Hire Me</a></li>
                 </ul>
+
+                <!-- Search Toggle -->
+                <input type="checkbox" id="search-toggle" hidden />
+                <label for="search-toggle" class="nav-icon"><i class="fas fa-search"></i></label>
+                <div class="navbar-search-container">
+                    <label for="search-toggle" class="close-search">&times;</label>
+                    <input type="text" class="navbar-search-input" placeholder="Type to search..." />
+                </div>
             </div>
         </div>
     </nav>
     <!-- Hero Section -->
-    <section class="hero d-flex align-items-center"
+    <section id="home" class="hero d-flex align-items-center"
         style="background: linear-gradient(rgba(24, 48, 54, 0.85), rgba(24, 48, 54, 0.85)), url('/assets/images/banner1.jpg') no-repeat center center; background-size: cover; height: 100vh;">
         <div class="container">
             <div class="row align-items-center">
-
                 <!-- Left Text -->
-                <div class="col-lg-7 ps-3">
-                    <h3 class="mb-3 text-start text-white fw-semibold lh-sm fs-3 font-dm-sans">Hi, I'm John Watson</h3>
-                    <h2 class="text-white mb-3">Web De<span class="text-primary">veloper</span></h2>
-                    <p class="lead text-start text-white">
-                        I love Graphic design and Photography and have been working on my portfolio since 2016. I can
-                        give your business a new Creative start right away!
+                <div class="col-lg-7 ps-lg-3 px-3 text-center text-lg-start mb-4 mb-lg-0">
+                    <h3 class="mb-3 text-white fw-semibold lh-sm fs-3 font-dm-sans">Hi, I'm John Watson</h3>
+
+                    <!-- Animated Words -->
+                    <div class="animated-words text-white mb-3">
+                        <span class="word">Web Developer</span>
+                        <span class="word">UI/UX Designer</span>
+                        <span class="word">Freelancer</span>
+                        <span class="word">Photography</span>
+                        <span class="word">App Development</span>
+                    </div>
+
+                    <p class="lead text-white">
+                        I love Graphic design and Photography and have been working on my portfolio since 2016.
+                        I can give your business a new Creative start right away!
                     </p>
-                    <div class="d-flex gap-3">
-                        <a href="/contact.html" class="btn btn-lg btn-hire-me">Hire Me</a>
+
+                    <div
+                        class="d-flex gap-3 flex-column flex-sm-row justify-content-center justify-content-lg-start align-items-center">
+                        <a href="assets/contact_me.html" class="btn btn-lg btn-hire-me">Hire Me</a>
                         <a href="#portfolio" class="btn btn-lg transparent-btn">My Portfolio</a>
                     </div>
                 </div>
+
 
                 <!-- Right Image -->
                 <div class="col-lg-5 text-end position-relative">
@@ -106,18 +123,14 @@
     </section>
 
     <!-- About Section -->
-    <section class="about py-5">
+    <section id="about" class="about py-5">
         <div class="container">
             <div class="row align-items-center g-5">
 
                 <!-- Left Image -->
                 <div class="col-lg-5 text-center">
-<<<<<<< HEAD
                     <img src="assets/images/about_portfolio image .png" alt="Profile"
                         class="img-fluid rounded-3 shadow">
-=======
-                    <img src="./assets/images/about/about.jpg" alt="Profile" class="img-fluid rounded-3 shadow">
->>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
                 </div>
 
                 <!-- Right Content -->
@@ -125,7 +138,9 @@
                     <small class="text-uppercase text-muted">My Biography</small>
                     <h2 class="mb-4">A Lead UI Designer & Web Developer<br>Based In UK</h2>
                     <p class="mb-4 text-muted">I love Graphic design and Photography and have been working on my
-                        portfolio since 2016. I can give your business a new Creative start right away! Contact me and
+                        portfolio since 2016. I can give your business a new Creative start right away! Contact
+                        me
+                        and
                         we will discuss your projects!</p>
 
                     <div class="row mb-4">
@@ -161,7 +176,7 @@
 
 
     <!-- Services Section -->
-    <section class="services py-5 bg-light">
+    <section id="services" class="services py-5 bg-light">
         <div class="container text-center">
             <h2 class="mb-5">What I Do For You</h2>
 
@@ -173,8 +188,8 @@
                             <i class="bi bi-laptop"></i>
                         </div>
                         <h5 class="card-title mb-3">Web Development</h5>
-                        <p class="card-text text-muted">Sed ut perspiciatis unde omnis iste natus error sit accusantium
-                            doloremque laudantium.</p>
+                        <p class="card-text text-muted">I craft responsive and SEO-optimized websites using modern
+                            technologies, focusing on performance, usability, and scalable structure.</p>
                     </div>
                 </div>
 
@@ -185,8 +200,8 @@
                             <i class="bi bi-phone"></i>
                         </div>
                         <h5 class="card-title mb-3">App Development</h5>
-                        <p class="card-text text-muted">Sed ut perspiciatis unde omnis iste natus error sit accusantium
-                            doloremque laudantium.</p>
+                        <p class="card-text text-muted">From concept to deployment, I develop mobile and web apps that
+                            are intuitive, fast, and tailored to solve real-world user problems.</p>
                     </div>
                 </div>
 
@@ -197,17 +212,18 @@
                             <i class="bi bi-camera"></i>
                         </div>
                         <h5 class="card-title mb-3">Photography</h5>
-                        <p class="card-text text-muted">Sed ut perspiciatis unde omnis iste natus error sit accusantium
-                            doloremque laudantium.</p>
+                        <p class="card-text text-muted">I capture moments with a creative edge, offering professional
+                            photography services for brands, events, and personal storytelling.</p>
                     </div>
                 </div>
             </div>
 
             <!-- More Services Link -->
             <div class="mt-4">
-                <a href="#" class="text-success text-decoration-none fw-semibold">
+                <a href="#feature-services" class="text-success text-decoration-none fw-semibold">
                     More Services <i class="bi bi-arrow-right"></i>
                 </a>
+
             </div>
         </div>
     </section>
@@ -217,19 +233,16 @@
             <div class="row align-items-center">
                 <!-- Image Section -->
                 <div class="col-md-6 mb-4 mb-md-0">
-<<<<<<< HEAD
                     <img src="assets/images/skills portfolio image.png" alt="Skills Image"
                         class="img-fluid rounded shadow">
-=======
-                    <img src="./assets/images/about/about1.jpg" alt="Skills Image" class="img-fluid rounded shadow">
->>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
                 </div>
 
                 <!-- Skills Section -->
                 <div class="col-md-6">
                     <small class="text-uppercase text-muted">My Skills</small>
                     <h2 class="mb-4">My Featured Skills</h2>
-                    <p>I specialize in Branding and Strategy, and am passionate about creating awesome portfolio work. I
+                    <p>I specialize in Branding and Strategy, and am passionate about creating awesome portfolio
+                        work. I
                         am always ready to impress the audience with my creativity.</p>
 
                     <!-- Skill Bars -->
@@ -267,7 +280,7 @@
     </section>
 
     <!-- Feature Section -->
-    <section class="py-5" style="background-color: #f8f9fa;">
+    <section id="feature-services" class="py-5" style="background-color: #f8f9fa;">
         <div class="container">
             <div class="row align-items-center">
 
@@ -281,8 +294,9 @@
                                 <i class="fas fa-code fa-2x text-primary me-3"></i>
                                 <div>
                                     <h6 class="fw-bold mb-1">Web Development</h6>
-                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
-                                        ligula at.</p>
+                                    <p class="small text-muted mb-0">I specialize in building high-performance,
+                                        user-friendly websites that are tailored to meet your business goals and adapt
+                                        seamlessly to modern technology trends.</p>
                                 </div>
                             </div>
                         </div>
@@ -292,8 +306,9 @@
                                 <i class="fas fa-paint-brush fa-2x text-primary me-3"></i>
                                 <div>
                                     <h6 class="fw-bold mb-1">Design Trends</h6>
-                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
-                                        ligula at.</p>
+                                    <p class="small text-muted mb-0">Staying ahead of design trends ensures your brand
+                                        looks fresh, engaging, and relevant—combining creativity with functionality for
+                                        lasting impressions.</p>
                                 </div>
                             </div>
                         </div>
@@ -303,8 +318,9 @@
                                 <i class="fas fa-chart-line fa-2x text-primary me-3"></i>
                                 <div>
                                     <h6 class="fw-bold mb-1">Research & Analysis</h6>
-                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
-                                        ligula at.</p>
+                                    <p class="small text-muted mb-0">Data-driven design begins with research. I analyze
+                                        user behavior and market trends to craft strategies that elevate your digital
+                                        presence effectively.</p>
                                 </div>
                             </div>
                         </div>
@@ -314,8 +330,9 @@
                                 <i class="fas fa-headset fa-2x text-primary me-3"></i>
                                 <div>
                                     <h6 class="fw-bold mb-1">Customer Support</h6>
-                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
-                                        ligula at.</p>
+                                    <p class="small text-muted mb-0">Your satisfaction is my priority. I provide prompt,
+                                        friendly support and clear communication throughout every stage of the project.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -325,8 +342,9 @@
                                 <i class="fas fa-mobile-alt fa-2x text-primary me-3"></i>
                                 <div>
                                     <h6 class="fw-bold mb-1">Responsive Design</h6>
-                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
-                                        ligula at.</p>
+                                    <p class="small text-muted mb-0">Every project I build is optimized to look great on
+                                        any device, ensuring your content remains accessible and visually appealing
+                                        across all screen sizes.</p>
                                 </div>
                             </div>
                         </div>
@@ -336,8 +354,9 @@
                                 <i class="fas fa-pen-nib fa-2x text-primary me-3"></i>
                                 <div>
                                     <h6 class="fw-bold mb-1">PSD Design</h6>
-                                    <p class="small text-muted mb-0">Lorem ipsum viverra libero set. Pellen ut justo, in
-                                        ligula at.</p>
+                                    <p class="small text-muted mb-0">Need a pixel-perfect design? I create clean,
+                                        organized PSD files ready for development, ensuring consistency from concept to
+                                        code.</p>
                                 </div>
                             </div>
                         </div>
@@ -357,7 +376,7 @@
 
 
     <!-- Counters Section -->
-    <section class="py-5" style="background-color: #2d6a4f;">
+    <section id=pages class="py-5" style="background-color: #2d6a4f;">
         <div class="container">
             <div class="row text-center text-white">
 
@@ -394,7 +413,7 @@
     </section>
 
     <!-- Success Section -->
-    <section class="py-5" style="background-color: #f8f9fa;">
+    <section id="blog" class="py-5" style="background-color: #f8f9fa;">
         <div class="container text-center">
 
             <h2 class="mb-5 fw-bold">My Success Work</h2>
@@ -403,70 +422,58 @@
 
                 <!-- success Item -->
                 <div class="col-12 col-md-4">
-                    <img src="./assets/images/blog/blog1.jpg" alt="Project 1" class="img-fluid rounded shadow-sm">
+                    <img src="assets/images/blog/blog1.jpg" alt="Project 1" class="img-fluid rounded shadow-sm">
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img src="./assets/images/blog/blog2.jpg" alt="Project 2" class="img-fluid rounded shadow-sm">
+                    <img src="assets/images/blog/blog2.jpg" alt="Project 2" class="img-fluid rounded shadow-sm">
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img src="./assets/images/blog/blog3.jpg" alt="Project 3" class="img-fluid rounded shadow-sm">
+                    <img src="assets/images/blog/blog3.jpg" alt="Project 3" class="img-fluid rounded shadow-sm">
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img src="./assets/images/blog/blog4.jpg" alt="Project 4" class="img-fluid rounded shadow-sm">
+                    <img src="assets/images/blog/blog4.jpg" alt="Project 4" class="img-fluid rounded shadow-sm">
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img src="./assets/images/blog/blog5.jpg" alt="Project 5" class="img-fluid rounded shadow-sm">
+                    <img src="assets/images/blog/blog5.jpg" alt="Project 5" class="img-fluid rounded shadow-sm">
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img src="./assets/images/blog/blog6.jpg" alt="Project 6" class="img-fluid rounded shadow-sm">
+                    <img src="assets/images/blog/blog6.jpg" alt="Project 6" class="img-fluid rounded shadow-sm">
                 </div>
 
             </div>
 
         </div>
     </section>
-<!-- Logos Section -->
-<section class="py-5" style="background-color: #2d6a4f;">
-    <div class="container-fluid px-0 overflow-hidden">
-        <div class="row flex-nowrap logos-row">
-            <div class="col-6 col-md-3">
-                <img src="./assets/images/logo/logo1.png" alt="Logo 1" class="img-fluid" style="max-height: 80px;">
-            </div>
-            <div class="col-6 col-md-3">
-                <img src="./assets/images/logo/logo2.png" alt="Logo 2" class="img-fluid" style="max-height: 80px;">
-            </div>
-            <div class="col-6 col-md-3">
-                <img src="./assets/images/logo/logo3.png" alt="Logo 3" class="img-fluid" style="max-height: 80px;">
-            </div>
-            <div class="col-6 col-md-3">
-                <img src="./assets/images/logo/logo4.png" alt="Logo 4" class="img-fluid" style="max-height: 80px;">
-            </div>
-            <div class="col-6 col-md-3">
-                <img src="./assets/images/logo/logo5.png" alt="Logo 5" class="img-fluid" style="max-height: 80px;">
-            </div>
-            <!-- Duplicate logos for seamless animation -->
-            <div class="col-6 col-md-3">
-                <img src="./assets/images/logo/logo1.png" alt="Logo 1" class="img-fluid" style="max-height: 80px;">
-            </div>
-            <div class="col-6 col-md-3">
-                <img src="./assets/images/logo/logo2.png" alt="Logo 2" class="img-fluid" style="max-height: 80px;">
-            </div>
-            <div class="col-6 col-md-3">
-                <img src="./assets/images/logo/logo3.png" alt="Logo 3" class="img-fluid" style="max-height: 80px;">
+
+    <!-- Logos Section -->
+    <section class="py-5" style="background-color: #2d6a4f;">
+        <div class="logo-slider">
+            <div class="logo-track">
+                <img src="assets/images/logo/logo1.png" alt="Logo 1" class="logo-img" />
+                <img src="assets/images/logo/logo2.png" alt="Logo 2" class="logo-img" />
+                <img src="assets/images/logo/logo3.png" alt="Logo 3" class="logo-img" />
+                <img src="assets/images/logo/logo4.png" alt="Logo 4" class="logo-img" />
+                <img src="assets/images/logo/logo5.png" alt="Logo 5" class="logo-img" />
+                <!-- Duplicate logos for infinite scroll effect -->
+                <img src="assets/images/logo/logo1.png" alt="Logo 1" class="logo-img" />
+                <img src="assets/images/logo/logo2.png" alt="Logo 2" class="logo-img" />
+                <img src="assets/images/logo/logo3.png" alt="Logo 3" class="logo-img" />
+                <img src="assets/images/logo/logo4.png" alt="Logo 4" class="logo-img" />
+                <img src="assets/images/logo/logo5.png" alt="Logo 5" class="logo-img" />
             </div>
         </div>
-<<<<<<< HEAD
+
     </section>
 
     <!-- Footer -->
     <footer>
 
-        <div class="footer-top">
+        <div id="contact" class="footer-top">
             <div class="footer-logo">
                 <img src="assets/images/portfolio_logo_img.png" alt="Logo">
             </div>
@@ -494,50 +501,6 @@
     </footer>
 
 
-=======
-    </div>
-</section>
-
-<!-- Empty White Space Section -->
-<section class="bg-white" style="height: 100px; width: 100%;">
-    <div class="container">
-        <!-- Empty container just for spacing -->
-    </div>
-</section>
-
-
-<!-- Footer Contact Section -->
-<footer class="text-white pt-5" style="background-color: #061e24;">
-    <div class="container text-center mb-4">
-        <!-- Centered Heading -->
-        <h4 class="mb-4"><i class="fab fa-asymmetrik"></i> UI Portfolio</h4>
-        
-        <!-- Contact Info - Centered and stacked on mobile, row on desktop -->
-        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
-            <p class="mb-0"><i class="fas fa-phone-alt me-2"></i> +12 345 678 900</p>
-            <p class="mb-0"><i class="fas fa-envelope me-2"></i> info@example.com</p>
-            <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i> 208 Avenue street, UK - 62617</p>
-        </div>
-    </div>
-
-   <!-- Social Media & Copyright -->
-<div class="py-3 px-0" style="background-color: #02191e;">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <!-- Copyright -->
-        <div class="mb-2 mb-md-0">
-            <p class="small mb-0">&copy; 2022  UI Portfolio. All Rights Reserved.</p>
-        </div>
-        <!-- Social Media Icons -->
-        <div class="social-icons">
-            <a href="#" class="text-white me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white me-3 fs-5"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-white me-3 fs-5"><i class="fab fa-google"></i></a>
-            <a href="#" class="text-white me-3 fs-5"><i class="fab fa-pinterest"></i></a>
-            <a href="#" class="text-white fs-5"><i class="fab fa-vk"></i></a>
-        </div>
-    </div>
-</div>
-</footer>
->>>>>>> c812466ee79bdcba0ba4ae2c08ef6f315e61b203
 </body>
+
 </html>
