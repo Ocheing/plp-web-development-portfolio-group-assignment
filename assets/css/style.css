@@ -383,9 +383,6 @@ ul.follow-social li a {
   }
 }
 
-
-
-
 /* Responsive Adjustments */
 @media (max-width: 1080px) {
   .w3l-banner h3 {
@@ -562,11 +559,6 @@ ul.follow-social li a {
   }
 }
 
-
-
-
-
-
 /* About Section */
 .about {
   background-color: #fff;
@@ -576,16 +568,10 @@ ul.follow-social li a {
   font-weight: 700;
 }
 
-
 .about p {
   font-size: 16px;
   color: var(--muted-text-color);
 }
-
-
-
-
-
 
 .about .btn {
   border-radius: 50px;
