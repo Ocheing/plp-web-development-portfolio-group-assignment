@@ -105,4 +105,4 @@ This project is submitted for educational purposes as part of the Power Learn Pr
 # 🚀 Extra Tip:
 
 ## 🌐 Live Demo
-[Click here to view the project live]()
+[Click here to view the project live](https://ocheing.github.io/plp-web-development-portfolio-group-assignment/)
