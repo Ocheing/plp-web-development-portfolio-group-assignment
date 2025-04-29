@@ -56,17 +56,13 @@ Our task was to **recreate a portfolio website** using only **HTML**, **CSS**, a
 
 ---
 
-## 📷 Project Preview
-
-![Portfolio Landing Page](./assets/screenshots/landing-page.png)
-
 ---
 
 ## 📂 How to Run Locally
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-group-name/your-repo-name.git
+
+   git clone https://github.com/Ocheing/plp-web-development-portfolio-group-assignment.git
 Open index.html in your browser.
 
 ##📋 Evaluation Criteria Checklist
