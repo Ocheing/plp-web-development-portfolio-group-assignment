@@ -59,7 +59,7 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 5rem;
 }
 
 .navbar-nav .nav-link {
@@ -250,16 +250,47 @@ body {
 }
 
 /* Profile Image Styling */
-.profile-image {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
+/* === Hero Section Fix for Profile Image Alignment === */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px; /* keep this for spacing below navbar */
 }
+
+.profile-img-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: var(--hero-img-right); /* Adjust as needed */
+  z-index: 1;
+}
+
+.profile-img-wrapper img {
+  max-height: 90vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+/* Responsive adjustments for profile image */
+@media (max-width: 768px) {
+  .profile-image {
+    max-width: 200px;
+    height: auto;
+    margin-top: 20px;
+  }
+/* Adjust the right position for the animations on small screens */
+  .animated-words {
+    text-align: left !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  
+}
+
 
 /* Banner Info */
 .banner-info-grid {
@@ -288,13 +319,14 @@ ul.follow-social li a {
 
 /* Icon Buttons */
 .icon-buttons {
-  position: absolute;
-  top: 50%;
-  left: 95%;
-  transform: translateY(-50%);
+  position: fixed;
+  top: var(--icon-top);
+  bottom: var(--icon-bottom);
+  left: var(--icon-left);
+  transform: var(--icon-transform);
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-direction: var(--icon-direction);
+  gap: var(--icon-gap);
   z-index: 20;
 }
 
@@ -315,6 +347,13 @@ ul.follow-social li a {
   color: #fff;
   transform: translateX(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation icon buttons - adjustable */
+@media (max-width: 768px) {
+  .icon-buttons {
+    top: var(--icon-top-small, 20%) !important; /* Adjust as needed */
+  }
 }
 
 .animated-words {
@@ -455,20 +494,39 @@ ul.follow-social li a {
   }
 
   .icon-buttons {
-    top: auto;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
+    top: auto !important; /* Ensures top doesn't interfere */
+  }
+
+  body {
+    --icon-top: auto;
+    --icon-bottom: 30%; /* Changes the position of navigation icons container*/
+    --icon-left: 50%;
+    --icon-transform: translateX(-50%);
+    --icon-direction: row;
+    --icon-gap: 10px;
+  }
+
+  .icon-buttons {
     padding: 10px 15px;
     border-radius: 40px;
-    gap: 10px;
   }
 
   .icon-buttons button {
     width: 40px;
     height: 40px;
   }
+
+
+    
+  /* For very small screens */
+    :root {
+      --icon-gap: 8px;
+    }
+  
+    .icon-buttons button {
+      width: 35px;
+      height: 35px;
+    }
 
   .d-flex.gap-3 {
     flex-direction: column;
@@ -624,9 +682,11 @@ img:hover {
 
 /* Feature Section Styles */
 .profile-image {
-  max-width: 100%;
+  max-width: 250px;
+  max-height: 300px;
+  width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .service-icon {
@@ -780,84 +840,47 @@ form button:hover {
   }
 }
 
-/* Footer Styles */
-footer {
-  background-color: #031b1f;
-  color: #ccc;
-  padding: 50px 20px;
-  text-align: center;
+/* Footer Social Icons Spacing */
+.bg-secondary .container {
+  max-width: 1200px; /* Or your preferred max width */
+  padding: 0 20px; /* Add some side padding */
 }
 
-.footer-logo img {
-  width: 50px;
-  margin-bottom: 10px;
+/* Remove default negative margins from Bootstrap rows to prevent small horizontal scrolling */
+.row {
+  margin-right: 0;
+  margin-left: 0;
 }
 
-.footer-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 20px;
+.social-icons {
+  margin-left: 0; /* Remove the previous large margin */
+  gap: 15px; /* Space between icons */
+  display: flex;
 }
 
-.footer-contact p {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-.footer-contact p i {
-  margin-right: 8px;
-  color: #00b894;
-}
-
-.footer-social {
-  margin-top: 20px;
-}
-
-.footer-social a {
-  display: inline-block;
-  margin: 0 8px;
-  color: #ccc;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.footer-social a:hover {
-  color: #00b894;
-}
-
-.footer-bottom {
-  margin-top: 30px;
-  font-size: 13px;
-  color: #777;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-title {
-    font-size: 22px;
+/* For larger screens */
+@media (min-width: 768px) {
+  .bg-secondary .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
   }
-
-  .footer-contact p {
-    font-size: 13px;
-  }
-
-  .footer-social a {
-    margin: 0 6px;
-    font-size: 16px;
+  
+  .social-icons {
+      margin-left: 200px; /* Your desired 200px gap */
   }
 }
 
-@media (max-width: 576px) {
-  .footer-title {
-    font-size: 20px;
-  }
+/* Profile image: Adjust position as need */
+:root {
+  --hero-img-right: 150px; /* You can change this to 80px, 100px etc. */
+}
 
-  .footer-contact p {
-    font-size: 12px;
-  }
-
-  .footer-social a {
-    font-size: 15px;
-  }
+:root {
+  --icon-top: 60%;
+  --icon-bottom: auto;
+  --icon-left: 95%;
+  --icon-transform: translateY(-50%);
+  --icon-direction: column;
+  --icon-gap: 15px;
 }
